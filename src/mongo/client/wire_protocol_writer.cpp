@@ -77,7 +77,7 @@ void WireProtocolWriter::write(const StringData& ns,
                 break;
 
             // Peek at the next operation.
-            const std::vector<WriteOperation*>::const_iterator next = boost::next(batch_iter);
+            const std::vector<WriteOperation*>::const_iterator next = std::next(batch_iter);
 
             // If we are out of operations, issue what we have.
             if (next == end)

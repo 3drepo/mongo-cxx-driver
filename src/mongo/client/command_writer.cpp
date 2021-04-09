@@ -65,7 +65,7 @@ void CommandWriter::write(const StringData& ns,
             batchOps.push_back(*batch_iter);
 
             // Peek at the next operation.
-            const std::vector<WriteOperation*>::const_iterator next = boost::next(batch_iter);
+            const std::vector<WriteOperation*>::const_iterator next = std::next(batch_iter);
 
             // If we are out of operations, issue what we have.
             if (next == end)
